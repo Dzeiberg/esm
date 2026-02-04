@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-import esm
+import fair_esm
 from fair_esm.model.esm2 import ESM2
 
 
@@ -83,7 +83,7 @@ def has_emb_layer_norm_before(model_state):
 
 
 def _load_model_and_alphabet_core_v1(model_data):
-    import esm  # since fair_esm.inverse_folding is imported below, you actually have to re-import esm here
+    import fair_esm  # since fair_esm.inverse_folding is imported below, you actually have to re-import fair_esm here
 
     alphabet = fair_esm.Alphabet.from_architecture(model_data["args"].arch)
 

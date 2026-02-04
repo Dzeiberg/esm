@@ -163,7 +163,7 @@ After pip install, you can load and use a pretrained model as follows:
 
 ```python
 import torch
-import esm
+import fair_esm
 
 # Load ESM-2 model
 model, alphabet = fair_esm.pretrained.esm2_t33_650M_UR50D()
@@ -206,7 +206,7 @@ After installing with the `[esmfold]` option, you can use the ESMFold structure 
 
 ```python
 import torch
-import esm
+import fair_esm
 
 model = fair_esm.pretrained.esmfold_v1()
 model = model.eval().cuda()

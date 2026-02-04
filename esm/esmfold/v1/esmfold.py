@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch import nn
 from torch.nn import LayerNorm
 
-import esm
+import fair_esm
 from esm import Alphabet
 from fair_esm.esmfold.v1.categorical_mixture import categorical_lddt
 from fair_esm.esmfold.v1.misc import (
