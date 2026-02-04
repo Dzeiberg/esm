@@ -16,7 +16,7 @@ from timeit import default_timer as timer
 import torch
 
 import esm
-from esm.data import read_fasta
+from fair_esm.data import read_fasta
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -140,14 +140,14 @@ def run(args):
         # if pretrained model path is available
         torch.hub.set_dir(args.model_dir)
 
-    model = esm.pretrained.esmfold_v1()
+    model = fair_esm.pretrained.esmfold_v1()
 
 
     model = model.eval()
     model.set_chunk_size(args.chunk_size)
 
     if args.cpu_only:
-        model.esm.float()  # convert to fp32 as ESM-2 in fp16 is not supported on CPU
+        model.fair_esm.float()  # convert to fp32 as ESM-2 in fp16 is not supported on CPU
         model.cpu()
     elif args.cpu_offload:
         model = init_model_on_gpu_with_cpu_offloading(model)

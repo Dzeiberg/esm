@@ -7,7 +7,7 @@ from pathlib import Path
 
 import torch
 
-from esm.esmfold.v1.esmfold import ESMFold
+from fair_esm.esmfold.v1.esmfold import ESMFold
 
 
 def _load_model(model_name):
@@ -27,7 +27,7 @@ def _load_model(model_name):
 
     missing_essential_keys = []
     for missing_key in expected_keys - found_keys:
-        if not missing_key.startswith("esm."):
+        if not missing_key.startswith("fair_esm."):
             missing_essential_keys.append(missing_key)
 
     if missing_essential_keys:

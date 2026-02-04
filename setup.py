@@ -26,13 +26,13 @@ extras = {
 }
 
 sources = {
-    "esm": "esm",
-    "esm.model": "esm/model",
-    "esm.inverse_folding": "esm/inverse_folding",
-    "esm.esmfold.v1": "esm/esmfold/v1",
-    "esm.scripts": "scripts"
+    "fair_esm": "esm",
+    "fair_esm.model": "esm/model",
+    "fair_esm.inverse_folding": "esm/inverse_folding",
+    "fair_esm.esmfold.v1": "esm/esmfold/v1",
+    "fair_esm.scripts": "scripts"
 }
-
+version = "0.1.0"  # type: ignore
 setup(
     name="fair-esm",
     version=version,
@@ -49,8 +49,8 @@ setup(
     zip_safe=True,
     entry_points={
         "console_scripts": [
-            "esm-extract=esm.scripts.extract:main",
-            "esm-fold=esm.scripts.fold:main",
+            "esm-extract=fair_esm.scripts.extract:main",
+            "esm-fold=fair_esm.scripts.fold:main",
         ]
     },
 )
